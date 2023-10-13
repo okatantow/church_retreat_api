@@ -35,7 +35,7 @@ class Client extends BaseController
             'retainer_fee' => 'required|max_length[255]'
         ];
 
- $input = $this->getRequestInput($this->request);
+        $input = $this->getRequestInput($this->request);
 
         if (!$this->validateRequest($input, $rules)) {
             return $this
@@ -95,10 +95,7 @@ class Client extends BaseController
             $model = new ClientModel();
             $model->findClientById($id);
 
-          $input = $this->getRequestInput($this->request);
-
-
-
+            $input = $this->getRequestInput($this->request);
             $model->update($id, $input);
             $client = $model->findClientById($id);
 
